@@ -1,0 +1,44 @@
+clear all;
+clc;
+
+figure;
+title('Sphere, Italo Garleni');
+hold on;
+R = 1;
+Nt = 20;
+Np = 40;
+theta = linspace(0,pi,Nt);
+phi = linspace(0,2*pi,Np);
+[theta,Phi] = meshgrid(theta,phi);
+X = R.*sin(theta).*cos(Phi);
+Y = R.*sin(theta).*sin(Phi);
+Z = R.*cos(theta);
+surf(X,Y,Z);
+hold on;
+cameratoolbar;
+colormap('flag');
+%shading default;
+material metal;
+grid on;
+axis off;
+axis equal;
+hold off;
+
+figure;
+title('Toro, Italo Garleni');
+hold on;
+R1 = 3;
+R2 = 1;
+Nt1 = 20;
+Np1 = 50;
+theta1 =linspace(0,2*pi,Nt1);
+phi1 = linspace(0,2*pi,Np1);
+[Theta1,Phi1] = meshgrid(theta1,phi1);
+X1 = (R1 + R2*cos(Theta1)).*cos(Phi1);
+Y1 = (R1 + R2*cos(Theta1)).*sin(Phi1);
+Z1 = R2*sin(Theta1);
+
+surf(X1,Y1,Z1);
+axis equal;
+cameratoolbar;
+hold off;

@@ -1,0 +1,23 @@
+clear all;
+clc;
+
+R = 1;
+Nt = 20;
+Np = 40;
+theta = linspace(0,pi,Nt);
+phi = linspace(0,2*pi,Np);
+[theta,Phi] = meshgrid(theta,phi);
+X = R.*sin(theta).*cos(Phi);
+Y = R.*sin(theta).*sin(Phi);
+Z = R.*cos(theta);
+surf(X,Y,Z);
+hold on;
+cameratoolbar;
+colormap('oropepita');
+%shading default;
+material metal;
+grid on;
+axis off;
+axis equal;
+title('Oropepita, Italo Garleni');
+hold off;
